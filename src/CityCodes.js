@@ -15,25 +15,14 @@ class CityCodes extends Component {
              city: event.target.value
          });
      }
- 
-     upperCaseConv = (word) => {
-        let text = this.state.city;
-        let upperCaseText = text.toUpperCase();
-        this.setState({ text: upperCaseText });
-     }
 
      onSubmit = (event) => {
-        console.log("State of word before", this.state.city);
-             this.upperCaseConv(this.state.city);
-        console.log("State of word after", this.state.city);
              event.preventDefault();
-             axios.get("http://ctp-zip-api.herokuapp.com/city/" + this.state.text)
+             axios.get("http://ctp-zip-api.herokuapp.com/city/" + this.state.city.toUpperCase())
                  .then((response) => {
                  this.setState({allData: response.data});
-                 console.log("State", this.state);
                    })
                  .catch((err) => console.log(err));
-                 console.log(this.state);
      }
  
  render(){
