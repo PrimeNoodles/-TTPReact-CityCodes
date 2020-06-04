@@ -6,7 +6,7 @@ import CityCodes from './CityCodes.js';
 class App extends Component {
   render(){
     return (
-
+      <CityCodes></CityCodes>
     );
   }
 }
