@@ -37,16 +37,18 @@ class CityCodes extends Component {
                 </label>
                 <input type="submit" value="submit"/>
             </form>
+            <div className = "text-center">
             {this.state.allData.map(data => {
-                 console.log("Here");
                  return (
-                     <div>
-                         <ul>
-                             <li>ZipCode: {data}</li>
-                         </ul>
-                     </div>
+                  
+                         <div>
+                             <h4>ZipCode: {data}</h4>
+                        </div>
+                       
+                  
                  )
              })}
+             </div>
         </div>
      ) : (
          <div>
@@ -57,7 +59,9 @@ class CityCodes extends Component {
                 </label>
                 <input type="submit" value="submit"/>
             </form>
-            <p>Results Not Found</p>
+            <div className = "text-center">
+            <h4>Results Not Found</h4>
+            </div>
          </div>
      )
      return (<div>{x}</div>)
